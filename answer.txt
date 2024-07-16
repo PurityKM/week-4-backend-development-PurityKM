@@ -1,0 +1,31 @@
+### Expense Management API Endpoints:
+        Implement API endpoints for managing expenses:
+            GET /api/expenses: Retrieve all expenses for a user.
+### Invoke-RestMethod -Uri http://localhost:3005/api/expenses -Method GET
+
+            POST /api/expenses: Add a new expense for a user.
+### $body = @{
+>>     description = "Dinner"
+>>     amount = 30.0
+>> } | ConvertTo-Json
+>> Invoke-RestMethod -Uri http://localhost:3005/api/expenses -Method POST -ContentType "application/json" -Body $body
+>>
+
+            PUT /api/expenses/:id: Update an existing expense.
+### $body = @{
+    description = "Updated Lunch"
+    amount = 20.0
+} | ConvertTo-Json
+Invoke-RestMethod -Uri http://localhost:3005/api/expenses/1 -Method PUT -ContentType "application/json" -Body $body
+
+            DELETE /api/expenses/:id: Delete an existing expense.
+### Invoke-RestMethod -Uri http://localhost:3005/api/expenses/1 -Method DELETE
+
+Calculate the total expenses for the user based on the expense records.
+        Return the total expense amount as a JSON response.
+
+### Invoke-RestMethod -Uri http://localhost:3006/api/expense -Method GET 
+
+message          token
+-------          -----
+Login successful eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0dXNlciIsImlhdCI6M... 
